@@ -81,7 +81,7 @@ void insertNode(stack_t **, int);
 void insertQueue(stack_t **, int, const char *);
 void checkPushArgs(const char, unsigned int, stack_t *);
 void _pushToSorQ(stack_t **, unsigned int);
-void printAll(stack_t **, unsigned int);
+void pall(stack_t **, unsigned int);
 void onExit(stack_t **, int);
 void handleUnk(int, char, FILE *, char *, stack_t *);
 int Exe(char, stack_t *, unsigned int, FILE *, instruction_t *);
