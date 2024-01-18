@@ -69,21 +69,20 @@ typedef struct Container
 extern dtContainer parsingInfo;
 
 /* Function Prototypes */
-ssize_t readCmd(char *, size_t *, unsigned int *, FILE *, char *);
-void execOp(char, stack_t *, short, FILE *, instruction_t *);
-int execCmd(char, stack_t *, FILE *, unsigned int);
-void procFile(FILE *, char *, unsigned int);
-void errHandler(const char, short, stack_t *, FILE *);
-void clean(stack_t **, FILE *);
-void Exit(stack_t **, int);
-void freeStack(stack_t **);
-void insertNode(stack_t **, int);
-void insertQueue(stack_t **, int, const char *);
-void checkPushArgs(const char, unsigned int, stack_t *);
-void _pushToSorQ(stack_t **, unsigned int);
-void pall(stack_t **, unsigned int);
-void onExit(stack_t **, int);
-void handleUnk(int, char, FILE *, char *, stack_t *);
-int Exe(char, stack_t *, unsigned int, FILE *, instruction_t *);
+ssize_t readCmd(char **bfr, size_t *sz, unsigned int *lC, FILE *fl, char **dt);
+void execOp(char *ocd, stack_t **stk, short lC, FILE *fl, instruction_t *op);
+int execCmd(char *data, stack_t **stack, FILE *file, unsigned int lnCount);
+int Exe(char *oc, stack_t **sk, unsigned int lc, FILE *fl, instruction_t *op);
+void procFile(FILE *file, char *data, unsigned int line_number);
+void errHandler(const char *msg, short lnNumber, stack_t **stack, FILE *file);
+void Exit(stack_t **stack, int log);
+void freeStack(stack_t **stack);
+void clean(stack_t **stack, FILE *file);
+void insertNode(stack_t **stack, int n);
+void insertQueue(stack_t **stack, int n, const char *errMsg);
+void checkPushArgs(const char *args, unsigned int lnCount, stack_t **stack);
+void _pushToSorQ(stack_t **stack, unsigned int lnCount);
+void pall(stack_t **stack, unsigned int lnCount);
+void handleUnk(int lc, char *oc, FILE *fl, char *dt, stack_t **stack);
 
 #endif /* MONTY_H */
