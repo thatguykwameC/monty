@@ -12,6 +12,8 @@ dtContainer parsingInfo = {NULL, NULL, NULL, false};
 
 int main(int argc, char **argv)
 {
+	FILE *file;
+
 	/* Initialize an empty stack */
 	stack_t *stack = NULL;
 
@@ -23,7 +25,7 @@ int main(int argc, char **argv)
 	}
 
 	/* Open the specified file for reading */
-	FILE *file = fopen(argv[1], "r");
+	file = fopen(argv[1], "r");
 
 	/* Check if the file opening was successful */
 	if (!file)
