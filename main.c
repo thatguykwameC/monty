@@ -1,5 +1,6 @@
 #include "monty.h"
 
+/* Global Variable */
 dtContainer parsingInfo = {NULL, NULL, NULL, false};
 
 /**
